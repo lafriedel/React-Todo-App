@@ -30,14 +30,14 @@ class App extends React.Component {
     })
   };
 
-  clearAll = event => {
+  clearAll = () => {
     this.setState({
       toDoItems: [],
       inputText: ""
     })
   };
 
-  clearComplete = event => {
+  clearComplete = () => {
     this.setState({
       toDoItems: this.state.toDoItems.filter(task => task.complete === false)
     })
@@ -56,7 +56,7 @@ class App extends React.Component {
           console.log(task);
           return {
             ...task, 
-            complete: true};
+            complete: task.complete === false ? true : false};
         } else {
           return task;
         }

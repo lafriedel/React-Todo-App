@@ -1,0 +1,11 @@
+.to-do {
+    cursor: pointer;
+}
+
+.to-do.true {
+    text-decoration: line-through;
+}
+
+.to-do.false {
+    text-decoration: none;
+}

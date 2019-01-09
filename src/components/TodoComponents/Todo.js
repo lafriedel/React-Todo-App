@@ -1,9 +1,12 @@
 import React from 'react';
+import './ToDo.css';
 
 const ToDo = props => {
     return (
         <div 
-            onClick={() => props.markComplete(props.toDoItem.id)}>
+            onClick={() => props.markComplete(props.toDoItem.id)}
+            className={`to-do ${props.toDoItem.complete}` }    
+        >
             {props.toDoItem.task}
         </div>
     );
