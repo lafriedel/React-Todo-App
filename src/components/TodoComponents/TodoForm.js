@@ -4,19 +4,19 @@ const ToDoForm = props => {
     return (
         <div className="form-container">
             <form onSubmit={props.addToDo}>
-                <div className="form-div">
+                <div className="form-div add">
                     <input
                         type="text"
                         value={props.inputText}
                         name="inputText"
-                        placeholder="What do you need to do?"
+                        placeholder="What's on today's list?"
                         onChange={props.handleChange}
                     />
                     <button className="btn">Add Item</button>
                 </div>
-                <div className="form-div">
+                <div className="form-div complete">
                     <button className="btn" onClick={props.clearComplete}>Clear Completed</button>
-                    <button className="btn" type="button" onClick={props.clearAll}>Clear All</button>
+                    <button className="btn clear-all" type="button" onClick={props.clearAll}>Clear All</button>
                 </div>
             </form>
         </div>

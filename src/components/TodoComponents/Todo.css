@@ -1,25 +1,78 @@
 /* -------------------- To-Do Form -------------------- */
 
 .form-container {
-border: 1px solid green;
 margin-bottom: 20px;
 }
 
 form {
     display: flex;
     justify-content: space-between;
-    align-items: flex-end;
 }
 
 .form-div {
-    border: 1px solid blue;
+    display: flex;
+    padding: 10px;
+    width: 100%;
+}
+
+.form-div.add {
+    justify-content: flex-start;
+    align-items: baseline;
+    width: 80%;
+}
+
+.form-div.complete {
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    align-items: center;
+    width: 30%;
 }
 
 input[type=text] {
-    padding: 5px;
+    padding: 8px;
+    width: 70%;
+    max-width: 1500px;
+    border: none;
+    border-bottom: 5px dotted #030301;
+    font-size: 4rem;
+    font-weight: 700;
+}
+
+input[type="text"]::placeholder {
+    color: #00D9C0;
+}
+
+input[type=text]:focus {
+    background-color: #00D9C0;
+    color: black;
+    outline: none;
+}
+
+input[type=text]:focus::placeholder {
+    color: white;
 }
 
 .btn {
+    padding: 10px 15px;
+    margin-left: 20px;
+    margin-top: 5px;
+    background: #00D9C0;
+    color: white;
+    font-size: 2rem;
+    font-weight: 700;
+    border: none;
+}
+
+.btn:hover {
+    cursor: pointer;
+}
+
+.btn:focus {
+    outline: none;
+}
+
+.btn.clear-all {
+    background: #FF4365;
 }
 
 /* -------------------- To-Do List -------------------- */
