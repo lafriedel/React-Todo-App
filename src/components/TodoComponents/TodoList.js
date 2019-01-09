@@ -1,9 +1,13 @@
 import React from 'react';
 
+import ToDo from './ToDo';
+
 const ToDoList = props => {
     return (
         <div>
-            <p>Item</p>
+            {props.toDoList.map(toDo => {
+                return <ToDo task={toDo.task} key={toDo.id} />
+            })}
         </div>
     );
 }
