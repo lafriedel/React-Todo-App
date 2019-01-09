@@ -3,6 +3,8 @@ import React from 'react';
 import ToDoList from './components/ToDoComponents/ToDoList';
 import ToDoForm from './components/ToDoComponents/ToDoForm';
 
+import './App.css';
+
 class App extends React.Component {
   // you will need a place to store your state in this component.
   // design `App` to be the parent component of your application.
@@ -66,7 +68,7 @@ class App extends React.Component {
   
   render() {
     return (
-      <div>
+      <div className="app">
         <h2>Welcome to your Todo App!</h2>
         <ToDoList 
           toDoItems={this.state.toDoItems}
