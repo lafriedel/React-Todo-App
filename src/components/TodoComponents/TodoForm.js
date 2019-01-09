@@ -10,8 +10,9 @@ const ToDoForm = props => {
                 placeholder="What do you need to do?"
                 onChange={props.handleChange}
             />
-            <button type="submit">Add Item</button>
-            <button type="button">Clear All</button>
+            <button>Add Item</button>
+            <button onClick={props.clearComplete}>Clear Completed</button>
+            <button type="button" onClick={props.clearAll}>Clear All</button>
         </form>
     )
 }
