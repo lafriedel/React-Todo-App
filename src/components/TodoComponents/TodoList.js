@@ -5,7 +5,7 @@ import './ToDo.css';
 
 const ToDoList = props => {
     return (
-        <div>
+        <div className="to-do-list">
             {props.toDoItems.map(toDo => {
                 return (
                     <ToDo 

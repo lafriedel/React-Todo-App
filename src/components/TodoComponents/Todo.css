@@ -1,5 +1,38 @@
+/* -------------------- To-Do Form -------------------- */
+
+.form-container {
+border: 1px solid green;
+margin-bottom: 20px;
+}
+
+form {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.form-div {
+    border: 1px solid blue;
+}
+
+input[type=text] {
+    padding: 5px;
+}
+
+.btn {
+}
+
+/* -------------------- To-Do List -------------------- */
+
+.to-do-list {
+    border: 1px solid red;
+    min-height: 100px;
+}
+
+/* -------------------- To-Do -------------------- */
 .to-do {
     cursor: pointer;
+    padding: 10px;
 }
 
 .to-do.true {

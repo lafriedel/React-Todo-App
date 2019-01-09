@@ -7,7 +7,7 @@ const ToDo = props => {
             onClick={() => props.markComplete(props.toDoItem.id)}
             className={`to-do ${props.toDoItem.complete}` }    
         >
-            {props.toDoItem.task}
+            <p>{props.toDoItem.task}</p>
         </div>
     );
 }
