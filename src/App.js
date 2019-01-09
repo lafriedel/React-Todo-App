@@ -39,7 +39,7 @@ class App extends React.Component {
 
   clearComplete = event => {
     this.setState({
-
+      toDoItems: this.state.toDoItems.filter(task => task.complete === false)
     })
   };
 
