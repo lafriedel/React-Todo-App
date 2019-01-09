@@ -14,13 +14,30 @@ class App extends React.Component {
       inputText: ""
     }
   }
+
+  addToDo = event => {
+
+  }
+
+  clearAll = event => {
+
+  }
+
+  handleChange = event => {
+
+  }
   
   render() {
     return (
       <div>
         <h2>Welcome to your Todo App!</h2>
         <ToDoList toDoList={this.state.toDoItems}/>
-        <ToDoForm />
+        <ToDoForm
+          addToDo={this.addToDo}
+          clearAll={this.clearAll}
+          handleChange={this.handleChange}
+          inputText={this.state.inputText}
+        />
       </div>
     );
   }
