@@ -2,34 +2,31 @@ import React from 'react';
 
 import ToDoList from './components/ToDoComponents/ToDoList';
 import ToDoForm from './components/ToDoComponents/ToDoForm';
+import SearchForm from './components/SearchComponents/SearchForm';
 
 import './App.css';
 
 class App extends React.Component {
-  // you will need a place to store your state in this component.
-  // design `App` to be the parent component of your application.
-  // this component is going to take care of state, and any change handlers you need to work with your state
   constructor() {
     super();
     this.state = {
       toDoItems: [],
-      inputText: ""
+      toDoText: ""
     }
   };
 
   addToDo = event => {
-    console.log("addToDo ran");
     event.preventDefault();
     this.setState({
       toDoItems: [
         ...this.state.toDoItems,
         {
-          task: this.state.inputText,
+          task: this.state.toDoText,
           id: Date.now(),
           complete: false
         }
       ],
-      inputText: ""
+      toDoText: ""
     }, this.updateLocalStorage)
   };
 
@@ -37,9 +34,9 @@ class App extends React.Component {
     e.preventDefault();
     this.setState({
       toDoItems: [],
-      inputText: ""
+      toDoText: ""
     },
-    this.updateLocalStorage)
+      this.updateLocalStorage)
   };
 
   clearComplete = (e) => {
@@ -47,7 +44,7 @@ class App extends React.Component {
     this.setState({
       toDoItems: this.state.toDoItems.filter(task => task.complete === false)
     },
-    this.updateLocalStorage)
+      this.updateLocalStorage)
   };
 
   handleChange = event => {
@@ -59,37 +56,52 @@ class App extends React.Component {
   markComplete = id => {
     this.setState({
       toDoItems: this.state.toDoItems.map(task => {
-        if (task.id === id ) {
+        if (task.id === id) {
           return {
-            ...task, 
-            complete: task.complete === false ? true : false};
+            ...task,
+            complete: task.complete === false ? true : false
+          };
         } else {
           return task;
         }
       })
     },
-    this.updateLocalStorage
+      this.updateLocalStorage
     )
   }
 
-  loadLocalStorage= () => {
-      if (localStorage.hasOwnProperty("list")) {
-        let list = localStorage.getItem("list");
+  handleSearch = event => {
+    let toDoItemsList = [];
+    // let searchList = [];
 
-            list = JSON.parse(list);
-            this.setState({toDoItems: list});
-      }
-    }
+        if (event.target.value !== "") {
+            toDoItemsList = this.state.toDoItems;
+            toDoItemsList.filter(item => {
+              let listItem = item.task.toLowerCase();
+              let searchQuery = event.target.value.toLowerCase();
+              console.log(listItem.includes(searchQuery), listItem);
+              return listItem.includes(searchQuery);
+            })
+          }
+  }
 
-    updateLocalStorage = () => {
-      localStorage.setItem("list", JSON.stringify(this.state.toDoItems))
+  loadLocalStorage = () => {
+    if (localStorage.hasOwnProperty("list")) {
+      let list = localStorage.getItem("list");
+
+      list = JSON.parse(list);
+      this.setState({ toDoItems: list });
     }
+  }
+
+  updateLocalStorage = () => {
+    localStorage.setItem("list", JSON.stringify(this.state.toDoItems))
+  }
 
   componentDidMount() {
-    console.log("component mounted");
     this.loadLocalStorage();
   }
-  
+
   render() {
     return (
       <div className="app">
@@ -98,9 +110,13 @@ class App extends React.Component {
           clearComplete={this.clearComplete}
           clearAll={this.clearAll}
           handleChange={this.handleChange}
-          inputText={this.state.inputText}
+          toDoText={this.state.toDoText}
         />
-        <ToDoList 
+        <SearchForm
+          handleSearch={this.handleSearch}
+          toDoItems={this.state.toDoItems}
+        />
+        <ToDoList
           toDoItems={this.state.toDoItems}
           markComplete={this.markComplete}
         />

@@ -7,8 +7,8 @@ const ToDoForm = props => {
                 <div className="form-div add">
                     <input
                         type="text"
-                        value={props.inputText}
-                        name="inputText"
+                        value={props.toDoText}
+                        name="toDoText"
                         placeholder="What's on today's list?"
                         onChange={props.handleChange}
                     />
