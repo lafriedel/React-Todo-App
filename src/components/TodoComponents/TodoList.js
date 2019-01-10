@@ -1,6 +1,8 @@
 import React from 'react';
 
 import ToDo from './ToDo';
+import Search from '../SearchComponents/Search';
+
 import './ToDo.css';
 
 const ToDoList = props => {
@@ -23,7 +25,11 @@ const ToDoList = props => {
         <div className="to-do-list">
             {props.searched.map(item => {
                 return (
-                    item.task
+                   <Search 
+                        search={item}
+                        key={item.id}
+                        markComplete={props.markComplete}
+                   />
                 )
             })}
         </div>
