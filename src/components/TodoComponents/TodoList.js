@@ -4,7 +4,7 @@ import ToDo from './ToDo';
 import './ToDo.css';
 
 const ToDoList = props => {
-
+    if (props.searched.length === 0) {
         return (
             <div className="to-do-list">
                 {props.toDoItems.map(toDo => {
@@ -18,7 +18,16 @@ const ToDoList = props => {
                 })}
             </div>
         );
-
+    }
+    return (
+        <div className="to-do-list">
+            {props.searched.map(item => {
+                return (
+                    item.task
+                )
+            })}
+        </div>
+    );
 
 }
 

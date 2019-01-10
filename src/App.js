@@ -11,6 +11,7 @@ class App extends React.Component {
     super();
     this.state = {
       toDoItems: [],
+      searched: [],
       toDoText: ""
     }
   };
@@ -72,17 +73,20 @@ class App extends React.Component {
 
   handleSearch = event => {
     let toDoItemsList = [];
-    // let searchList = [];
+    let searchedList = [this.state.toDoItems];
 
         if (event.target.value !== "") {
             toDoItemsList = this.state.toDoItems;
-            toDoItemsList.filter(item => {
+            searchedList = toDoItemsList.filter(item => {
               let listItem = item.task.toLowerCase();
               let searchQuery = event.target.value.toLowerCase();
               console.log(listItem.includes(searchQuery), listItem);
               return listItem.includes(searchQuery);
             })
           }
+        this.setState({
+          searched: searchedList
+        });
   }
 
   loadLocalStorage = () => {
@@ -119,6 +123,7 @@ class App extends React.Component {
         <ToDoList
           toDoItems={this.state.toDoItems}
           markComplete={this.markComplete}
+          searched={this.state.searched}
         />
       </div>
     );
