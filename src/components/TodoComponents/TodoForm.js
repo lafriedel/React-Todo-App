@@ -3,7 +3,7 @@ import React from 'react';
 const ToDoForm = props => {
     return (
         <div className="form-container">
-            <form onSubmit={props.addToDo}>
+            <form>
                 <div className="form-div add">
                     <input
                         type="text"
@@ -12,7 +12,7 @@ const ToDoForm = props => {
                         placeholder="What's on today's list?"
                         onChange={props.handleChange}
                     />
-                    <button className="btn">Add Item</button>
+                    <button onClick={props.addToDo} className="btn">Add Item</button>
                 </div>
                 <div className="form-div complete">
                     <button className="btn" onClick={props.clearComplete}>Clear Completed</button>

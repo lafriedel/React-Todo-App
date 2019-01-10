@@ -18,6 +18,7 @@ class App extends React.Component {
   };
 
   addToDo = event => {
+    console.log("addToDo ran");
     event.preventDefault();
     this.setState({
       toDoItems: [
@@ -29,37 +30,36 @@ class App extends React.Component {
         }
       ],
       inputText: ""
-    }, () => {localStorage.setItem("list", JSON.stringify(this.state.toDoItems))})
-
-    localStorage.setItem("itemFromaddToDo", this.state.inputText);
+    }, this.updateLocalStorage)
   };
 
-  clearAll = () => {
+  clearAll = (e) => {
+    e.preventDefault();
     this.setState({
       toDoItems: [],
       inputText: ""
-    })
+    },
+    this.updateLocalStorage)
   };
 
-  clearComplete = () => {
+  clearComplete = (e) => {
+    e.preventDefault();
     this.setState({
       toDoItems: this.state.toDoItems.filter(task => task.complete === false)
-    })
+    },
+    this.updateLocalStorage)
   };
 
   handleChange = event => {
     this.setState({
       [event.target.name]: event.target.value
     })
-
-    localStorage.setItem("inputText", event.target.value);
   }
 
   markComplete = id => {
     this.setState({
       toDoItems: this.state.toDoItems.map(task => {
         if (task.id === id ) {
-          console.log(task);
           return {
             ...task, 
             complete: task.complete === false ? true : false};
@@ -67,7 +67,27 @@ class App extends React.Component {
           return task;
         }
       })
-    });
+    },
+    this.updateLocalStorage
+    )
+  }
+
+  loadLocalStorage= () => {
+      if (localStorage.hasOwnProperty("list")) {
+        let list = localStorage.getItem("list");
+
+            list = JSON.parse(list);
+            this.setState({toDoItems: list});
+      }
+    }
+
+    updateLocalStorage = () => {
+      localStorage.setItem("list", JSON.stringify(this.state.toDoItems))
+    }
+
+  componentDidMount() {
+    console.log("component mounted");
+    this.loadLocalStorage();
   }
   
   render() {
