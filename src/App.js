@@ -29,7 +29,9 @@ class App extends React.Component {
         }
       ],
       inputText: ""
-    })
+    }, () => {localStorage.setItem("list", JSON.stringify(this.state.toDoItems))})
+
+    localStorage.setItem("itemFromaddToDo", this.state.inputText);
   };
 
   clearAll = () => {
@@ -49,6 +51,8 @@ class App extends React.Component {
     this.setState({
       [event.target.name]: event.target.value
     })
+
+    localStorage.setItem("inputText", event.target.value);
   }
 
   markComplete = id => {
