@@ -14,7 +14,7 @@ const ToDoList = props => {
                         <ToDo 
                             toDoItem={toDo} 
                             key={toDo.id} 
-                            markComplete={props.markComplete} 
+                            markListComplete={props.markListComplete} 
                         />
                     );
                 })}
@@ -28,7 +28,7 @@ const ToDoList = props => {
                    <Search 
                         search={item}
                         key={item.id}
-                        markComplete={props.markComplete}
+                        markSearchComplete={props.markSearchComplete}
                    />
                 )
             })}

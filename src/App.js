@@ -54,7 +54,7 @@ class App extends React.Component {
     })
   }
 
-  markComplete = id => {
+  markListComplete = id => {
     this.setState({
       toDoItems: this.state.toDoItems.map(task => {
         if (task.id === id) {
@@ -71,9 +71,24 @@ class App extends React.Component {
     )
   }
 
+  markSearchComplete = id => {
+    this.setState({
+      searched: this.state.searched.map(task => {
+        if (task.id === id) {
+          return {
+            ...task,
+            complete: task.complete === false ? true : false
+          };
+        } else {
+          return task;
+        }
+      })
+    })
+  }
+
   handleSearch = event => {
     let toDoItemsList = [];
-    let searchedList = [this.state.toDoItems];
+    let searchedList = [];
 
         if (event.target.value !== "") {
             toDoItemsList = this.state.toDoItems;
@@ -122,7 +137,8 @@ class App extends React.Component {
         />
         <ToDoList
           toDoItems={this.state.toDoItems}
-          markComplete={this.markComplete}
+          markListComplete={this.markListComplete}
+          markSearchComplete={this.markSearchComplete}
           searched={this.state.searched}
         />
       </div>
