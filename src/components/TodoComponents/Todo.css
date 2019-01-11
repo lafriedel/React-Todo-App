@@ -2,36 +2,29 @@
 
 .form-container {
 border-bottom: 3px solid black;
-padding-bottom: 15px;
+padding-bottom: 5px;
+width: 100%;
+margin: 0 auto;
 }
 
 form {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .form-div {
     display: flex;
-    padding: 10px;
+    padding: 5px 15px;
     width: 100%;
-}
-
-.form-div.add {
-    justify-content: flex-start;
-    align-items: baseline;
-    width: 60%;
-}
-
-.form-div.complete {
-    flex-wrap: wrap;
     justify-content: flex-end;
     align-items: center;
-    width: 40%;
 }
 
 input[type=text] {
     padding: 8px;
-    width: 70%;
+    width: 85%;
     max-width: 1500px;
     border: none;
     border-bottom: 5px dotted #030301;
@@ -80,7 +73,7 @@ input[type=text]:focus::placeholder {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
     padding: 0 40px;
 }
 
@@ -98,7 +91,6 @@ input[type=text]:focus::placeholder {
 .to-do p {
     font-size: 5rem;
     font-weight: 700;
-    text-align: center;
 }
 
 .to-do.true {
