@@ -1,7 +1,7 @@
 import React from 'react';
 
-import ToDoList from './components/ToDoComponents/ToDoList';
-import ToDoForm from './components/ToDoComponents/ToDoForm';
+import ToDoList from './components/TodoComponents/TodoList';
+import ToDoForm from './components/TodoComponents/TodoForm';
 import SearchForm from './components/SearchComponents/SearchForm';
 
 import './App.css';

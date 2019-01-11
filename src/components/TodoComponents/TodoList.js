@@ -1,9 +1,9 @@
 import React from 'react';
 
-import ToDo from './ToDo';
+import ToDo from './Todo';
 import Search from '../SearchComponents/Search';
 
-import './ToDo.css';
+import './Todo.css';
 
 const ToDoList = props => {
     if (props.searched.length === 0) {
