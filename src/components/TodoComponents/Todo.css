@@ -1,7 +1,8 @@
 /* -------------------- To-Do Form -------------------- */
 
 .form-container {
-margin-bottom: 20px;
+border-bottom: 3px solid black;
+padding-bottom: 15px;
 }
 
 form {
@@ -18,14 +19,14 @@ form {
 .form-div.add {
     justify-content: flex-start;
     align-items: baseline;
-    width: 80%;
+    width: 60%;
 }
 
 .form-div.complete {
     flex-wrap: wrap;
     justify-content: flex-end;
     align-items: center;
-    width: 30%;
+    width: 40%;
 }
 
 input[type=text] {
@@ -34,7 +35,7 @@ input[type=text] {
     max-width: 1500px;
     border: none;
     border-bottom: 5px dotted #030301;
-    font-size: 4rem;
+    font-size: 3rem;
     font-weight: 700;
 }
 

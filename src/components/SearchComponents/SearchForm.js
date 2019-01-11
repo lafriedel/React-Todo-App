@@ -1,14 +1,21 @@
 import React from 'react';
 
+import './Search.css';
+
 const SearchForm = props => {
     return (
-        <form role="search">
-            <input
-                type="search"
-                placeholder="Search your tasks"
-                onChange={props.handleSearch}
-            />
-        </form>
+        <div className="search-form-container">
+            <form>
+                <div className="search-input-div">
+                    <input
+                        type="search"
+                        placeholder="Search your tasks"
+                        onChange={props.handleSearch}
+                    />
+                </div>
+            </form>
+        </div>
+
     )
 }
 

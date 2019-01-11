@@ -1,0 +1,39 @@
+
+    form {
+        display: flex;
+        justify-content: space-between;
+    }
+    
+    .search-form-container {
+
+    }
+
+    .search-input-div {
+        display: flex;
+        padding: 10px;
+        width: 100%;
+    }
+    
+    input[type=search] {
+        padding: 8px;
+        width: 100%;
+        max-width: 1500px;
+        border: none;
+        border-bottom: 3px dotted #030301;
+        font-size: 2rem;
+        font-weight: 700;
+    }
+    
+    input[type=search]::placeholder {
+        color: #00D9C0;
+    }
+    
+    input[type=search]:focus {
+        background-color: #00D9C0;
+        color: black;
+        outline: none;
+    }
+    
+    input[type=search]:focus::placeholder {
+        color: white;
+    }
