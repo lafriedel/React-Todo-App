@@ -87,15 +87,21 @@ class App extends React.Component {
   }
 
   handleSearch = event => {
+    event.preventDefault();
     let toDoItemsList = [];
     let searchedList = [];
 
         if (event.target.value !== "") {
             toDoItemsList = this.state.toDoItems;
+
             searchedList = toDoItemsList.filter(item => {
+
               let listItem = item.task.toLowerCase();
+
               let searchQuery = event.target.value.toLowerCase();
+
               console.log(listItem.includes(searchQuery), listItem);
+              
               return listItem.includes(searchQuery);
             })
           }
