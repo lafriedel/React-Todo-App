@@ -1,0 +1,42 @@
+
+    form {
+        display: flex;
+        justify-content: space-between;
+    }
+    
+    .search-form-container {
+        width: 100%;
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    .search-input-div {
+        padding: 10px;
+        min-width: 345px;
+        width: 100%;
+    }
+    
+    input[type=search] {
+        padding: 5px;
+        width: 100%;
+        max-width: 1500px;
+        border: none;
+        border-bottom: 3px dotted #030301;
+        font-size: 2rem;
+        font-weight: 700;
+        text-align: right;
+    }
+    
+    input[type=search]::placeholder {
+        color: #00D9C0;
+    }
+    
+    input[type=search]:focus {
+        background-color: #00D9C0;
+        color: black;
+        outline: none;
+    }
+    
+    input[type=search]:focus::placeholder {
+        color: white;
+    }

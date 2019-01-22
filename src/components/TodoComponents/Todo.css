@@ -1,0 +1,102 @@
+/* -------------------- To-Do Form -------------------- */
+
+.form-container {
+border-bottom: 3px solid black;
+padding-bottom: 10px;
+width: 100%;
+margin: 0 auto;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-div {
+    display: flex;
+    padding: 5px 15px;
+    width: 100%;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+input[type=text] {
+    padding: 8px;
+    width: 85%;
+    max-width: 1500px;
+    border: none;
+    border-bottom: 5px dotted #030301;
+    font-size: 3rem;
+    font-weight: 700;
+}
+
+input[type="text"]::placeholder {
+    color: #00D9C0;
+}
+
+input[type=text]:focus {
+    background-color: #00D9C0;
+    color: black;
+    outline: none;
+}
+
+input[type=text]:focus::placeholder {
+    color: white;
+}
+
+.btn {
+    padding: 10px 15px;
+    margin-left: 20px;
+    margin-top: 5px;
+    background: #00D9C0;
+    color: white;
+    font-size: 2rem;
+    font-weight: 700;
+    border: none;
+    cursor: pointer;
+}
+
+.btn:focus {
+    outline: none;
+}
+
+.btn.clear-all {
+    background: #FF4365;
+}
+
+/* -------------------- To-Do List -------------------- */
+
+.to-do-list {
+    min-height: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 0 40px;
+}
+
+/* -------------------- To-Do -------------------- */
+.to-do {
+    cursor: pointer;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.to-do:hover {
+    background: #FF4365;
+}
+
+.to-do p {
+    font-size: 5rem;
+    font-weight: 700;
+}
+
+.to-do.true {
+    text-decoration: line-through;
+}
+
+.to-do.false {
+    text-decoration: none;
+}

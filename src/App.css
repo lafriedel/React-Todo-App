@@ -1,0 +1,9 @@
+.app {
+    margin: 50px auto;
+    max-width: 1500px;
+    width: 85%;
+    background: white;
+    border: 8px solid black;
+    padding: 30px;
+    min-height: 80vh;
+}
